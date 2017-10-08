@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="morado">
     <ion-title>Modal Page</ion-title>
   </ion-navbar>
 
@@ -16,5 +16,8 @@
 <ion-content padding>
 
   <h1>Modal!</h1>
+
+  <button ion-button block (click)="cerrarConParametros()" color="primary"> Cerrar con Parametros</button>
+  <button ion-button block (click)="cerrarSinParametros()" color="morado"> Cerrar sin Parametros</button>
 
 </ion-content>

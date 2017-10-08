@@ -28,5 +28,13 @@ mostrarModal(){
   let modal = this.modalCtrl.create( ModalPage, {nombre:"Fernando", edad: 30});
 
   modal.present();
+
+  modal.onDidDismiss(parametros =>{
+    if(parametros){
+      console.log("Data del modal:")
+      console.log(parametros)
+
+    }
+  });
 }
 }

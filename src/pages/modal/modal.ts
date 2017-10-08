@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the ModalPage page.
@@ -17,7 +17,7 @@ export class ModalPage {
   nombre="";
   edad:number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController) {
 
     this.nombre = this.navParams.get("nombre");
     this.edad = this.navParams.get("edad");
@@ -25,5 +25,20 @@ export class ModalPage {
     console.log(this.nombre, this.edad)
   }
 
+  cerrarConParametros(){
+      let data = {
+        nombre: "Daniel",
+        edad:18,
+        coords: {
+          lat:43,
+          lng:55
+        }
+      }
+      this.viewCtrl.dismiss( data ); //devuelve data a la pagina desde la que lo hemos abierto
+  }
+
+  cerrarSinParametros(){
+    this.viewCtrl.dismiss();
+  }
 
 }
